@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ChangeListItems.MainPage">
+    <VerticalStackLayout Spacing="5" Padding="5">
+        <Button Text="Change Equipments" Command="{Binding ChangeEquipments}" />
+
+        <!-- ListView does not populate items correctly; but CollectionView does -->
+        <ListView ItemsSource="{Binding MyEquipmentList}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout>
+                            <Label Text="{Binding Title}" />
+                            <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <!--<CollectionView ItemsSource="{Binding MyEquipmentList}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout>
+                        <Label Text="{Binding Title}" />
+                        <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" />
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>-->
+
+    </VerticalStackLayout>
+    
+</ContentPage>
+ 
